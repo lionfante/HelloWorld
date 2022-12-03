@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   public name = "Phu";
   public age = 20;
-  public vehicles = ["Toyota","Honda"];
-  //constructor(){ }
+  public vehicles = ["Toyota","Honda","Yamaha"];
+  constructor(){ };
+
+  public ClickHandler(){
+    //alert(this.name);
+    console.log(this.name);
+  }
 }

@@ -1,8 +1,30 @@
-<p>chao {{name}}</p>
+<p>chao {{name | lowercase}}</p>
 
-<span *ngIf="age > 30">toi tren 30 tuoi</span>
-<span *ngIf="age < 30">toi duoi 30 tuoi</span>
+<!-- <span *ngIf="age > 30">toi tren 30 tuoi</span>
+<span *ngIf="age < 30">toi duoi 30 tuoi</span> -->
+
+
+<span *ngIf="age < 30 then condition1 else condition2"></span>
+<ng-template #condition1>toi tren 30 tuoi</ng-template>
+<ng-template #condition2>toi duoi 30 tuoi</ng-template>
+
+<br>
+<span>You are {{age | number}} years old</span>
 <br>
 <div *ngFor="let item of vehicles">
     <li>{{item}}</li>
 </div>
+<span>{{vehicles | json}}</span>
+<br>
+<div>
+    <select >
+        <option></option>
+        <option value="{{item}}" *ngFor="let item of vehicles">{{item}}</option>
+    </select>
+</div>
+<br>
+<div>
+    <input [(ngModel)]="name" />
+    <button (click)="ClickHandler()">Click</button>
+</div>
+
