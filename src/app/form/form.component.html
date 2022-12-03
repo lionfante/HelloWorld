@@ -1,0 +1,15 @@
+<div>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <label for="txtUsername">Username</label>
+        <input id="txtUsername" [(ngModel)]="Username" type="text" name="Username" required />
+        <span *ngIf="Username === ''" class="errorMessage">Username is required!</span>
+        <br>
+        <label for="txtPassword">Password</label>
+        <input id="txtPassword" [(ngModel)]="Password" value="{{Password}}" name="Password" type="text" class="errorMessage" />
+        <select (change)="selectedVehicle($event)">
+            <option value="{{item}}" *ngFor="let item of vehicles">{{item}}</option>
+        </select>
+        <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+    </form>
+    
+</div>

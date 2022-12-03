@@ -5,7 +5,7 @@
 
 
 <span *ngIf="age < 30 then condition1 else condition2"></span>
-<ng-template #condition1>toi tren 30 tuoi</ng-template>
+<ng-template #condition1><span myBold>toi tren 30 tuoi</span></ng-template>
 <ng-template #condition2>toi duoi 30 tuoi</ng-template>
 
 <br>
@@ -27,4 +27,5 @@
     <input [(ngModel)]="name" />
     <button (click)="ClickHandler()">Click</button>
 </div>
+<button (click)="TangTuoi()">Tang Tuoi</button>
 
