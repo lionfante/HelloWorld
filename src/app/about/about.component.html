@@ -1,1 +1,19 @@
-<p>Tuoi cua ban la {{age}}</p>
+<div>
+    <span>Ban ten la {{name}}</span>
+    <br>
+    <span>Tuoi {{age}}</span>
+    <br>
+    <span>Gender {{gender}}</span>
+    <br>
+    <span>Comment: {{comments ? comments[0].id : ''}}</span>
+    <br>
+    <span>Comment: {{comments ? comments[1].id : ''}}</span>
+</div>
+
+<div>
+    <button (click)="addPost()">Add post</button>
+    <br>
+    <span>Post id: {{posts ? posts[posts.length-1].id : ''}}</span>
+    <br>
+    <span *ngFor="let post of posts">{{post?.title}}</span>
+</div>
